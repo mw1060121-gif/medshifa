@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zeenat Medicine Market</title>
+<link rel="manifest" href="zeenat6.webmanifest">
+<meta name="theme-color" content="#1d4fd8">
+<link rel="apple-touch-icon" href="zeenat-192.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>">
+<style>
+:root{--bg:#f3f7f5;--card:#fff;--text:#14231d;--muted:#5d6f66;--accent:#0d7a5a;--accent-t:#fff;--chip:#e3f3ec;--border:#d3e0da;--warn:#fde3e0;--warn-t:#6b1a12;--best:#e7f7ee;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a16;--card:#17261f;--text:#e6f1ec;--muted:#9bb0a6;--accent:#3ec79b;--accent-t:#04251a;--chip:#1e3a2e;--border:#2a4237;--warn:#4a1d18;--warn-t:#ffd5cf;--best:#16382a}}
+:root[data-theme="dark"]{--bg:#0f1a16;--card:#17261f;--text:#e6f1ec;--muted:#9bb0a6;--accent:#3ec79b;--accent-t:#04251a;--chip:#1e3a2e;--border:#2a4237;--warn:#4a1d18;--warn-t:#ffd5cf;--best:#16382a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:12px}
+h1{font-size:20px;margin:4px 0 10px}
+.box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px;margin-bottom:10px}
+.warn{background:var(--warn);color:var(--warn-t);border-radius:12px;padding:10px 12px;margin-bottom:10px;font-size:14px}
+.stat{color:var(--muted);font-size:14px;margin:0 0 8px}
+input[type=search]{width:100%;font-size:17px;padding:12px;border-radius:12px;border:1.5px solid var(--border);background:var(--card);color:var(--text)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-t);border:0;border-radius:12px;padding:11px 16px;font-size:15px;font-weight:600;cursor:pointer}
+.btn.o{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+.btn.s{padding:6px 10px;font-size:13px;border-radius:9px}
+.grp{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:8px;overflow:hidden}
+.top{padding:10px 12px;background:var(--best)}
+.nm{font-weight:700;font-size:16px}
+.sub{color:var(--muted);font-size:13px}
+.big{font-size:22px;font-weight:800;color:var(--accent)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.chip{display:inline-block;background:var(--chip);border-radius:8px;padding:2px 8px;font-size:12px;margin-left:4px}
+details>summary{padding:8px 12px;font-size:13px;color:var(--accent);cursor:pointer}
+.alt{padding:8px 12px;border-top:1px solid var(--border)}
+.lst{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-top:1px solid var(--border);font-size:14px;gap:8px}
+.empty{text-align:center;color:var(--muted);padding:24px 8px}
+[hidden]{display:none!important}
+.tabs{display:flex;gap:8px;margin-bottom:10px}.tabs .btn{flex:1}
+.ab{display:flex;gap:6px;align-items:center}
+.qi{width:62px;padding:7px;border-radius:9px;border:1.5px solid var(--border);background:var(--card);color:var(--text);font-size:15px}
+.cl{padding:8px 0;border-top:1px solid var(--border)}
+.qb{display:flex;align-items:center;gap:8px;margin-top:4px}
+.ph{width:100%;padding:9px;border-radius:10px;border:1.5px solid var(--border);background:var(--card);color:var(--text);font-size:15px;margin:6px 0}
+.gh{font-weight:800;font-size:19px;color:#ea580c}
+@media (prefers-color-scheme:dark){.gh{color:#fb923c}}
+:root{--bg:#f4f6fb;--card:#fff;--text:#101828;--muted:#5b6784;--accent:#1d4fd8;--accent-t:#fff;--chip:#e6edff;--border:#d9e0f0;--best:#eaf1ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--card:#172036;--text:#e8edf9;--muted:#9eabc9;--accent:#7aa7ff;--accent-t:#08122b;--chip:#22305a;--border:#2a3858;--best:#1b2a4d}}
+body{font-size:17px}
+.hd{background:var(--accent);color:var(--accent-t);margin:-12px -12px 12px;padding:16px;border-radius:0 0 20px 20px}
+.hd h1{margin:0;font-size:21px;line-height:1.25;padding-right:96px}
+.hd div{opacity:.85;font-size:14px;margin-top:2px}
+.btn{padding:13px 18px;font-size:16px;border-radius:14px}
+.btn.s{padding:8px 12px;font-size:14px}
+.box,.grp{border-radius:18px;box-shadow:0 2px 8px rgba(20,40,100,.07)}
+.top{border-left:5px solid var(--accent)}
+.big{font-size:26px}
+.nm{font-size:17px}
+input[type=search]{font-size:18px;padding:14px;border:2px solid var(--accent);border-radius:14px}
+.qi{width:70px;font-size:16px;padding:9px}
+.hd{position:relative}
+.hd .sz{position:absolute;right:12px;top:14px;display:flex;gap:6px;opacity:1;margin:0}
+.sz button{border:0;border-radius:10px;padding:7px 13px;font-size:16px;font-weight:700;background:rgba(255,255,255,.28);color:var(--accent-t);cursor:pointer}
+.tabs{flex-wrap:wrap}
+.tabs .btn{flex:1 1 28%;padding:10px 4px;font-size:14px}
+.mk{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:14px 6px;border:0;border-top:1px solid var(--border);background:transparent;color:var(--text);font-size:19px;cursor:pointer}
+.mq{font-weight:800;min-width:44px;color:var(--accent)}
+.mn{flex:1}
+.mn small{display:block;color:var(--muted);font-size:13px}
+.mt{font-size:26px;color:#dc2626;font-weight:800}
+.mk.dn .mn,.mk.dn .mq{text-decoration:line-through;opacity:.4}
+.mg{display:flex;align-items:center;gap:8px;padding:0 6px 10px 56px;font-size:15px}
+#printbox{display:none}
+#printbox table{width:100%;border-collapse:collapse;font-size:16px}
+#printbox th,#printbox td{border:1px solid #444;padding:6px 8px;text-align:left}
+@media print{body>*:not(#printbox){display:none!important}#printbox{display:block!important;color:#000;background:#fff}}
+.r1{background:#dcf7e3;border-left-color:#16a34a}.r1 .big{color:#15803d}
+.r2{background:#fff0d0;border-left-color:#f59e0b}.r2 .big{color:#b45309}
+.rk{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:8px;background:rgba(0,0,0,.09);margin-bottom:4px}
+@media (prefers-color-scheme:dark){.r1{background:#12351f}.r1 .big{color:#4ade80}.r2{background:#3d2d0c}.r2 .big{color:#fbbf24}.rk{background:rgba(255,255,255,.14)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd"><div class="sz"><button data-z="-1">A−</button><button data-z="1">A+</button></div><h1><img alt="" style="width:40px;height:40px;border-radius:10px;vertical-align:middle;margin-right:8px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAASFBMVEX///////z+//7+/v79/v77/f309+ri7uLQ3a6x0Z2nv4h2wLQGr+4Bru8Are8Are16n790nQpChdYFpOotfOUnd+U0dLQfUYGdFoceAAAB5klEQVR42uWW4ZKjIBCER2AYRFTA1bz/m16PJrt3W7UBf25dV6oSU340MzQo0f8iRyTTNAnrr25GprSs65aEbD+TlqRatqnTyxhOK4A5bdu8SR8Foy0tUDrwnZhMj9NQV4XS/nj0WhliTA3QrE5zX1WW/AUtM2Y3rxNxT0n+5TTPS+pz+oTWWdWCjDXWObav6V1T7FwpuQOJsBcRfwvKx/FQaYi0nCfk3nYvAzhEgqR1W9GHk8TiEr/xkgws+2tbaFq3FaxuELI/YqwczLJKlKxI+oSBhH4uTMfzWQs7jqpkEJUOJO9WVovmZ0cOoLVm+OMyv40eM+UP3FyPZzMvHY3E2rpDJ5jzOc08SjPmdf+A9hPdc9d2f0GX9syQ45sQOUO+jHehgUKJNyE2NLah/A0iH1sQ/wsJ/ghNCOfeX0xlLNwYS2ieEl9Wp5HEDshx3p/rm42zQwAkPedEPZOE49WhIlCt1ZXBWmLdFI7sgNZFfFodxx2v2Dh7MqFVkrW+xAEYEofnBZrgORbfzJ6U6PXstJbDCA8NkWu2PJQSzrFZYVx1PG9OKoYg3ntBGjqMrlDg1hKhovLWdm1ENXspdD53ZaDLrXROTtuODIzhmtzY+wZiPm2K9L+1oCgZ0Ycw3HjT+c36Ax+4KGt+dmhrAAAAAElFTkSuQmCC"> Zeenat Medicine Market</h1><div>Al Shifa Patni · sab se kam rate yahan</div></div>
+  <div class="tabs"><button class="btn" id="tabS">🔍 Search</button><button class="btn o" id="tabC">🛒 Cart (0)</button><button class="btn o" id="tabM">🛍 Market</button><button class="btn o" id="tabK">📒 Khata</button><button class="btn o" id="tabO">📜 Orders</button><button class="btn o" id="tabE">📝 Alag (0)</button></div>
+  <div id="stale"></div>
+  <div class="box" id="sbox">
+    <p class="stat" id="stat">Load ho raha hai…</p>
+    <input id="q" type="search" placeholder="Item ka naam likhein" autocomplete="off" inputmode="search">
+  </div>
+  <div id="out"></div>
+  <div id="cart" hidden></div>
+  <div id="khata" hidden></div>
+  <div id="market" hidden></div>
+  <div id="orders" hidden></div>
+  <div id="extra" hidden></div>
+  <div class="box" id="lbox">
+    <div class="row">
+      <button class="btn" id="add">+ Offer list lagayein</button>
+    </div>
+    <input id="file" type="file" multiple hidden>
+    <p class="sub" id="msg" style="margin:8px 0 0"></p>
+    <div id="lists"></div>
+    <details style="margin-top:10px"><summary>⭐ Roz ka maal</summary><div id="fav"></div></details>
+    <details style="margin-top:6px"><summary>💾 Backup / Restore</summary><div id="bk"></div></details>
+  </div>
+</div>
+<script>
+var DB = null, lists = [], idx = [];
+
+function openDb(){
+  return new Promise(function(res){
+    try{
+      var r = indexedDB.open('medoffers', 1);
+      r.onupgradeneeded = function(){ r.result.createObjectStore('lists', {keyPath:'shop'}); };
+      r.onsuccess = function(){ DB = r.result; res(); };
+      r.onerror = function(){ res(); };
+    }catch(e){ res(); }
+  });
+}
+function dbAll(){
+  return new Promise(function(res){
+    if(!DB) return res([]);
+    try{
+      var q = DB.transaction('lists').objectStore('lists').getAll();
+      q.onsuccess = function(){ res(q.result || []); };
+      q.onerror = function(){ res([]); };
+    }catch(e){ res([]); }
+  });
+}
+function dbPut(o){
+  return new Promise(function(res){
+    if(!DB) return res();
+    try{
+      var t = DB.transaction('lists','readwrite'); t.objectStore('lists').put(o);
+      t.oncomplete = res; t.onerror = res;
+    }catch(e){ res(); }
+  });
+}
+function dbDel(k){
+  return new Promise(function(res){
+    if(!DB) return res();
+    try{
+      var t = DB.transaction('lists','readwrite'); t.objectStore('lists').delete(k);
+      t.oncomplete = res; t.onerror = res;
+    }catch(e){ res(); }
+  });
+}
+
+function clean(s){ return (s||'').replace(/\s+/g,' ').replace(/[\s+*\-]+$/,'').trim(); }
+function dmy(s){ var m = /(\d{2})\/(\d{2})\/(\d{4})/.exec(s||''); return m ? m[3]+m[2]+m[1] : '00000000'; }
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+function parseList(html, fname){
+  var d = new DOMParser().parseFromString(html, 'text/html');
+  var shop = '';
+  var sm = /shopTitle\s*:\s*"([^"]+)"/.exec(html);
+  if(sm) shop = clean(sm[1]);
+  ['.shopname', 'h2', 'h3', 'h1'].forEach(function(sel){
+    if(shop) return;
+    var el = d.querySelector(sel), tx = el ? clean(el.textContent) : '';
+    if(tx && !/^enter\b/i.test(tx) && !/^offer list$/i.test(tx)) shop = tx;
+  });
+  if(!shop && fname){ shop = clean(fname.replace(/\.[^.]+$/, '').replace(/[_-]?\d{2}[-_.]\d{2}[-_.]\d{4}.*$/, '').replace(/_/g, ' ')); }
+  if(/^enter customer/i.test(shop)) shop = '';
+  if(!shop){ var h1 = d.querySelector('h1'); shop = clean(h1 ? h1.textContent : ''); }
+  var meta = (d.body ? d.body.textContent : '') || '';
+  var date = (/Date[\s:<\/b>]*(\d{2}\/\d{2}\/\d{4})/i.exec(meta) || [])[1] || '';
+  var no = ((/List No[\s:]*(\d+)/i.exec(meta)) || [])[1] || '';
+  var pm = /(?<!\d)(?:\+?92|0)?(3\d{2})[-\s]?(\d{7})(?!\d)/.exec(meta.slice(0, 2500));
+  var ph = pm ? '0' + pm[1] + pm[2] : '';
+  var wn = d.getElementById('waNumber');
+  if(wn && /\d{10,}/.test(wn.value || '')) ph = wn.value.replace(/\D/g, '');
+  var wm2 = /wa\.me\/\+?(\d{10,})\?text="\s*\+/.exec(html);
+  if(wm2 && !(wn && /\d{10,}/.test(wn.value || ''))) ph = wm2[1];
+  var items = [], comp = '';
+  d.querySelectorAll('tr').forEach(function(tr){
+    var tds = tr.children;
+    if(tr.classList.contains('company-head') || tr.classList.contains('heading')){ comp = clean(tr.textContent).replace(/^\.+$/,''); return; }
+    if(tr.classList.contains('item-row')){
+      var nm = tr.querySelector('.cell-name');
+      var name = clean(nm ? nm.textContent : '');
+      if(!name) return;
+      items.push({
+        c: clean(tds[0] ? tds[0].textContent : ''), n: name, co: comp,
+        d: parseFloat(tr.getAttribute('data-disc')) || 0,
+        b: clean(tr.getAttribute('data-bonus') || ''),
+        tp: parseFloat(tr.getAttribute('data-tp')) || 0
+      });
+      return;
+    }
+    if(tr.classList.contains('item') && tds.length >= 5){
+      var n2 = clean(tds[1].textContent);
+      if(!n2) return;
+      items.push({
+        c: clean(tds[0].textContent), n: n2, co: comp,
+        d: parseFloat(tds[3].textContent) || 0,
+        b: clean(tds[4].textContent),
+        tp: parseFloat(tds[5] ? tds[5].textContent : '') || 0
+      });
+      return;
+    }
+    if(tr.parentNode && tr.parentNode.id === 'myTable' && tds.length === 1){ comp = clean(tr.textContent); }
+  });
+  return {shop: shop, date: date, no: no, ph: ph, items: items};
+}
+
+function build(){
+  idx = [];
+  lists.forEach(function(l){
+    l.items.forEach(function(it){
+      idx.push({id: idx.length, n: it.n, k: it.n.toUpperCase().replace(/[^A-Z0-9]/g,''), l: it.n.toLowerCase(),
+        co: it.co, d: it.d, b: it.b, tp: it.tp, c: it.c, shop: l.shop, date: l.date, pv: l.prev ? l.prev[it.n.toUpperCase().replace(/[^A-Z0-9]/g, '')] : null, pd: l.prevDate});
+    });
+  });
+}
+
+function today(){ var t = new Date(); return ''+t.getFullYear()+('0'+(t.getMonth()+1)).slice(-2)+('0'+t.getDate()).slice(-2); }
+
+function renderMeta(){
+  var total = lists.reduce(function(a,l){ return a + l.items.length; }, 0);
+  document.getElementById('stat').textContent = lists.length ? ('Lagi hui lists: '+lists.length+' · Kul items: '+total) : 'Abhi koi list nahi lagi.';
+  var old = lists.filter(function(l){ return dmy(l.date) < today(); }).length;
+  document.getElementById('stale').innerHTML = !lists.length
+    ? '<div class="warn">Pehle supplier ki offer list (.html file) lagayein, phir item search karein.</div>'
+    : (old ? '<div class="warn">'+old+' lists purani hain. Taaza rate ke liye aaj ki lists dobara lagayein.</div>' : '');
+  var h = '';
+  lists.slice().sort(function(a,b){ return dmy(b.date).localeCompare(dmy(a.date)); }).forEach(function(l){
+    h += '<div class="lst"><div><b>'+esc(l.shop)+'</b><div class="sub">'+esc(l.date)+' · '+l.items.length+' items</div></div>'
+      + '<button class="btn o s" data-del="'+esc(l.shop)+'">Hatayein</button></div>';
+  });
+  document.getElementById('lists').innerHTML = h;
+}
+
+function fmtOffer(o){
+  var s = '<span class="big">'+o.d.toFixed(2).replace(/\.00$/,'')+'%</span>';
+  if(o.b) s += '<span class="chip">Bonus '+esc(o.b)+'</span>';
+  if(o.tp > 0) s += '<div class="sub">TP Rs '+o.tp.toFixed(2).replace(/\.00$/, '')+' − '+o.d+'% = <b style="color:var(--text);font-size:16px;white-space:nowrap">Rs '+(o.tp*(1-o.d/100)).toFixed(2)+'</b></div>';
+  return s;
+}
+
+function search(){
+  var q = document.getElementById('q').value.toLowerCase().trim();
+  var out = document.getElementById('out');
+  if(!q){ out.innerHTML = lists.length ? '<div class="empty">🔍<br>Item ka naam likhein, sab se zyada discount saamne aa jayega</div>' : ''; return; }
+  var toks = q.toUpperCase().split(/[^A-Z0-9]+/).filter(Boolean), groups = {}, order = [], ex = {};
+  if(!toks.length){ out.innerHTML = ''; return; }
+  var short = toks.length === 1 && toks[0].length <= 2;
+  idx.forEach(function(r){
+    if(short){
+      if(r.n.toUpperCase().indexOf(toks[0]) !== 0) return;
+      if(!groups[r.k]){ groups[r.k] = []; order.push(r.k); ex[r.k] = 0; }
+      groups[r.k].push(r); return;
+    }
+    var ws = r.w || (r.w = r.n.toUpperCase().split(/[^A-Z0-9]+/).filter(Boolean));
+    var used = {}, i, j;
+    for(i = 0; i < toks.length; i++){
+      var ok = false;
+      for(j = 0; j < ws.length; j++){ if(wm(toks[i], ws[j])){ ok = true; used[j] = 1; } }
+      if(!ok) return;
+    }
+    var e = 0;
+    for(j = 0; j < ws.length; j++){ if(!used[j] && !NOISE[ws[j]]) e++; }
+    if(!groups[r.k]){ groups[r.k] = []; order.push(r.k); ex[r.k] = e; }
+    groups[r.k].push(r);
+  });
+  if(!order.length){ out.innerHTML = '<div class="empty">Kuch nahi mila</div>'; return; }
+  var mn = Math.min.apply(null, order.map(function(k){ return ex[k]; }));
+  order.forEach(function(k){ groups[k].sort(cmpOffer); });
+  var byP = function(a, b){ return short ? groups[a][0].n.localeCompare(groups[b][0].n) : cmpOffer(groups[a][0], groups[b][0]); };
+  var main = order.filter(function(k){ return ex[k] === mn; }).sort(byP);
+  var rest = order.filter(function(k){ return ex[k] > mn; }).sort(byP);
+  order = main.concat(showMore ? rest : []);
+  var h = '', shown = 0;
+  order.slice(0, short ? 120 : 40).forEach(function(k, gi){
+    var g = groups[k];
+    var best = g[0];
+    var rk = !short && gi < 2 && gi < main.length;
+    h += '<div class="grp"><div class="top'+(rk ? ' r'+(gi+1) : '')+'">'+(rk ? '<span class="rk">'+(gi === 0 ? '🥇 Sab se sasta' : '🥈 Doosra sasta')+'</span>' : '')+'<div class="nm">'+esc(best.n)+'</div>'
+      + '<div class="sub">'+esc(best.co)+'</div>'
+      + '<div class="row"><div>'+fmtOffer(best)+'</div>'+addBox(best)+'</div>'
+      + '<div class="sub">'+esc(best.shop)+' · '+esc(best.date)+inCart(best)+'</div>'+chg(best)+lastLine(best.k)+'</div>';
+    if(g.length > 1){
+      h += '<details><summary>Aur '+(g.length-1)+' suppliers</summary>';
+      g.slice(1).forEach(function(o){
+        h += '<div class="alt"><div class="row"><div>'+fmtOffer(o).replace('big','nm')+'</div>'+addBox(o)+'</div><div class="sub">'+esc(o.shop)+' · '+esc(o.date)+inCart(o)+'</div>'+chg(o)+'</div>';
+      });
+      h += '</details>';
+    }
+    h += '</div>';
+    shown++;
+  });
+  if(order.length > shown) h += '<div class="empty">Aur '+(order.length-shown)+' items hain, naam thoda aur likhein.</div>';
+  if(rest.length) h += '<button class="btn o" data-more="1" style="width:100%;margin-bottom:10px">'+(showMore ? 'Milte julte chhupayein' : 'Milte julte dekhein ('+rest.length+')')+'</button>';
+  out.innerHTML = h;
+}
+
+async function addFiles(files){
+  var msg = document.getElementById('msg'), ok = 0, skip = 0, bad = 0, badNames = [];
+  for(var i=0;i<files.length;i++){
+    msg.textContent = 'Padh raha hoon… '+(i+1)+'/'+files.length;
+    try{
+      var p = parseList(await files[i].text(), files[i].name || '');
+      if(!p.items.length || !p.shop){ bad++; badNames.push(files[i].name || '?'); continue; }
+      var ex = lists.filter(function(l){ return l.shop === p.shop; })[0];
+      if(ex && dmy(ex.date) > dmy(p.date)){ skip++; continue; }
+      if(ex && ex.ph && !p.ph) p.ph = ex.ph;
+      if(ex){
+        if(dmy(ex.date) < dmy(p.date)){
+          var pm2 = {};
+          ex.items.forEach(function(it){ pm2[keyOf(it.n)] = {n: it.tp > 0 ? it.tp * (1 - it.d/100) : 0, d: it.d}; });
+          p.prev = pm2; p.prevDate = ex.date;
+        }else{ p.prev = ex.prev; p.prevDate = ex.prevDate; }
+      }
+      await dbPut(p);
+      lists = lists.filter(function(l){ return l.shop !== p.shop; });
+      lists.push(p); ok++;
+    }catch(e){ bad++; badNames.push(files[i].name || '?'); }
+  }
+  build(); renderMeta(); search();
+  msg.textContent = ok+' list lagi' + (skip ? ', '+skip+' purani thi (chhod di)' : '') + (bad ? ', '+bad+' file padhi nahi ja saki: '+badNames.join(', ') : '') + '.';
+}
+
+document.getElementById('add').onclick = function(){ document.getElementById('file').click(); };
+document.getElementById('file').onchange = function(e){ if(e.target.files.length) addFiles(Array.prototype.slice.call(e.target.files)); e.target.value = ''; };
+document.getElementById('q').oninput = function(){ showMore = false; search(); };
+document.getElementById('lists').onclick = async function(e){
+  var s = e.target.getAttribute && e.target.getAttribute('data-del');
+  if(!s) return;
+  await dbDel(s);
+  lists = lists.filter(function(l){ return l.shop !== s; });
+  build(); renderMeta(); search();
+};
+
+var cart = [];
+try{ cart = JSON.parse(localStorage.getItem('mo_cart') || '[]'); }catch(e){ cart = []; }
+function saveCart(){ try{ localStorage.setItem('mo_cart', JSON.stringify(cart)); }catch(e){} cartTab(); }
+function cartTab(){ document.getElementById('tabC').textContent = '🛒 Cart ('+cart.length+')'; }
+var zm = 1;
+try{ zm = parseFloat(localStorage.getItem('mo_zoom')) || 1; }catch(e){ zm = 1; }
+function setZoom(z){
+  zm = Math.round(Math.max(0.7, Math.min(1.5, z)) * 10) / 10;
+  document.body.style.zoom = zm;
+  try{ localStorage.setItem('mo_zoom', String(zm)); }catch(e){}
+}
+setZoom(zm);
+var NOISE = {TAB:1, TABS:1, TABLET:1, TABLETS:1, NEW:1, OLD:1, RETAIL:1, S:1, PKT:1, PACK:1};
+var showMore = false;
+function lev(a, b){
+  var m = a.length, n = b.length, d = [], i, j;
+  for(i = 0; i <= m; i++){ d[i] = [i]; }
+  for(j = 1; j <= n; j++){ d[0][j] = j; }
+  for(i = 1; i <= m; i++){
+    for(j = 1; j <= n; j++){
+      d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a.charAt(i-1) === b.charAt(j-1) ? 0 : 1));
+    }
+  }
+  return d[m][n];
+}
+function wm(t, w){
+  if(w.indexOf(t) === 0) return true;
+  if(t.length >= 4){
+    if(lev(t, w.slice(0, t.length)) <= (t.length >= 7 ? 2 : 1)) return true;
+    if(w.indexOf(t) > 0) return true;
+  }
+  return false;
+}
+function cmpOffer(a, b){
+  var na = a.tp > 0, nb = b.tp > 0;
+  if(na && nb) return a.tp*(1 - a.d/100) - b.tp*(1 - b.d/100);
+  if(na !== nb) return na ? -1 : 1;
+  return b.d - a.d;
+}
+function addBox(o){
+  return '<div class="ab"><input type="number" min="1" inputmode="numeric" placeholder="Qty" class="qi"><button class="btn s" data-add="'+o.id+'">+ Cart</button><button class="btn o s" data-fav="'+o.id+'">⭐</button></div>';
+}
+function showTab(t){
+  ['sbox','out','lbox'].forEach(function(id){ document.getElementById(id).hidden = (t !== 's'); });
+  document.getElementById('cart').hidden = (t !== 'c');
+  document.getElementById('khata').hidden = (t !== 'k');
+  document.getElementById('market').hidden = (t !== 'm');
+  document.getElementById('tabM').className = 'btn' + (t === 'm' ? '' : ' o');
+  if(t === 'm') renderMarket();
+  document.getElementById('orders').hidden = (t !== 'o');
+  document.getElementById('tabO').className = 'btn' + (t === 'o' ? '' : ' o');
+  if(t === 'o') renderOrders();
+  document.getElementById('extra').hidden = (t !== 'e');
+  document.getElementById('tabE').className = 'btn' + (t === 'e' ? '' : ' o');
+  if(t === 'e') renderExtra();
+  document.getElementById('tabK').className = 'btn' + (t === 'k' ? '' : ' o');
+  if(t === 'k') renderKhata();
+  document.getElementById('tabS').className = 'btn' + (t === 's' ? '' : ' o');
+  document.getElementById('tabC').className = 'btn' + (t === 'c' ? '' : ' o');
+  if(t === 'c') renderCart();
+}
+function addToCart(id, q){
+  var o = idx[id]; if(!o) return;
+  var f = cart.filter(function(c){ return c.shop === o.shop && c.n === o.n && c.c === o.c; })[0];
+  if(f) f.qty += q; else cart.push({shop: o.shop, n: o.n, c: o.c, d: o.d, b: o.b, tp: o.tp, qty: q});
+  saveCart();
+}
+function renderCart(){
+  var el = document.getElementById('cart');
+  if(!cart.length){ el.innerHTML = '<div class="empty">🛒<br>Cart khali hai. Search mein item dhoondh kar + Cart dabayein.</div>'; return; }
+  var shops = [];
+  cart.forEach(function(c){ if(shops.indexOf(c.shop) < 0) shops.push(c.shop); });
+  var h = '';
+  shops.forEach(function(s){
+    var l = lists.filter(function(x){ return x.shop === s; })[0] || {};
+    var tot = 0, hasTp = false;
+    h += '<div class="box"><div class="gh">'+esc(s)+'</div>'
+      + '<input class="ph" type="tel" inputmode="tel" placeholder="Supplier ka WhatsApp number (03xx...)" value="'+esc(l.ph || '')+'" data-ph="'+esc(s)+'">';
+    cart.forEach(function(c, i){
+      if(c.shop !== s) return;
+      var amt = c.tp > 0 ? c.tp * (1 - c.d/100) * c.qty : 0;
+      if(amt){ tot += amt; hasTp = true; }
+      h += '<div class="cl"><div class="nm">'+esc(c.n)+'</div><div class="sub">'+c.d+'%'+(c.b ? ' · Bonus '+esc(c.b) : '')+(amt ? ' · TP '+c.tp+' → Rs '+(c.tp*(1-c.d/100)).toFixed(2)+' x '+c.qty+' = Rs '+Math.round(amt) : '')+'</div>'
+        + '<div class="qb"><button class="btn o s" data-dec="'+i+'">−</button><b>'+c.qty+'</b><button class="btn o s" data-inc="'+i+'">+</button>'
+        + '<button class="btn o s" data-rm="'+i+'" style="margin-left:auto">Hatayein</button></div></div>';
+    });
+    if(hasTp) h += '<p class="stat">Andaza kul: Rs '+Math.round(tot)+'</p>';
+    h += '<input class="ph" type="number" inputmode="decimal" placeholder="Bill ki rakam Rs (khata ke liye)" data-amt="'+esc(s)+'" value="'+(amtMap[s] !== undefined ? esc(amtMap[s]) : (hasTp ? Math.round(tot) : ''))+'">';
+    h += '<div class="row"><button class="btn" data-send="'+esc(s)+'">WhatsApp par bhejein</button><button class="btn o s" data-clr="'+esc(s)+'">Order ho gaya, khata mein likhein</button></div><button class="btn o s" data-tomk="'+esc(s)+'" style="margin-top:8px;width:100%">Sirf market list mein daalein (order nahi bheja)</button>';
+    if(msgOpen === s){
+      h += '<div class="cl"><textarea class="ph" rows="6" readonly id="mt">'+esc(orderText(s))+'</textarea>'
+        + '<a class="btn" href="'+waUrl(s)+'" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-bottom:8px">WhatsApp kholein</a>'
+        + '<button class="btn o" data-copy="'+esc(s)+'" style="width:100%">Message copy karein</button>'
+        + '<p class="sub">Agar WhatsApp na khule, to message copy karke WhatsApp mein paste kar dein.</p></div>';
+    }
+    h += '</div>';
+  });
+  el.innerHTML = h;
+}
+var msgOpen = null;
+var amtMap = {};
+function orderText(s){
+  var lines = [], n = 0, tot = 0;
+  cart.forEach(function(c){
+    if(c.shop !== s) return;
+    n++;
+    var amt = c.tp > 0 ? c.tp * (1 - c.d/100) * c.qty : 0;
+    tot += amt;
+    lines.push(n+'. '+c.n+(c.c ? ' ('+c.c+')' : '')+' - Qty: '+c.qty+(c.b ? ' (Bonus '+c.b+')' : '')+(c.tp > 0 ? ' - TP '+c.tp+', Offer '+c.d+'%' : '')+(amt ? ' = Rs '+Math.round(amt) : ''));
+  });
+  var v = parseFloat(amtMap[s]);
+  if(v > 0) tot = v;
+  var prev = bal(s), txt = 'Order - ' + s + '\n' + lines.join('\n');
+  if(tot > 0){
+    txt += '\n\nIs order ka total: Rs ' + Math.round(tot);
+    txt += '\n' + (prev < 0 ? 'Pichla advance: Rs ' + Math.round(-prev) : 'Pichla baqaya: Rs ' + Math.round(prev));
+    txt += '\nKul baqaya: Rs ' + Math.round(prev + tot);
+  }else if(prev){
+    txt += '\n\n' + (prev < 0 ? 'Pichla advance: Rs ' + Math.round(-prev) : 'Pichla baqaya: Rs ' + Math.round(prev));
+  }
+  return txt + '\n\nDeveloped by Al Shifa Patni';
+}
+function waUrl(s){
+  var l = lists.filter(function(x){ return x.shop === s; })[0] || {};
+  var num = (l.ph || '').replace(/\D/g, '');
+  if(num.charAt(0) === '0') num = '92' + num.slice(1);
+  return 'https://wa.me/' + num + '?text=' + encodeURIComponent(orderText(s));
+}
+function waApp(s){
+  var l = lists.filter(function(x){ return x.shop === s; })[0] || {};
+  var num = (l.ph || '').replace(/\D/g, '');
+  if(num.charAt(0) === '0') num = '92' + num.slice(1);
+  return 'whatsapp://send?phone=' + num + '&text=' + encodeURIComponent(orderText(s));
+}
+function sendOrder(s){ msgOpen = s; renderCart(); }
+var kh = {}, khOpen = null;
+try{ kh = JSON.parse(localStorage.getItem('mo_khata') || '{}'); }catch(e){ kh = {}; }
+function saveKh(){ try{ localStorage.setItem('mo_khata', JSON.stringify(kh)); }catch(e){} }
+function bal(s){ return (kh[s] || []).reduce(function(a, e){ return a + (e.t === 'bill' ? e.a : -e.a); }, 0); }
+function addKh(s, t, a, note){
+  if(!(a > 0)) return;
+  (kh[s] = kh[s] || []).push({t: t, a: a, d: new Date().toLocaleDateString('en-GB'), n: note || ''});
+  saveKh();
+}
+function balTxt(b){ return b > 0 ? 'Aap ko dena hai: Rs '+Math.round(b) : (b < 0 ? 'Advance: Rs '+Math.round(-b) : 'Hisaab barabar'); }
+function renderKhata(){
+  var el = document.getElementById('khata');
+  var names = lists.map(function(l){ return l.shop; });
+  Object.keys(kh).forEach(function(k){ if(names.indexOf(k) < 0) names.push(k); });
+  if(!names.length){ el.innerHTML = '<div class="empty">📒<br>Pehle supplier ki list lagayein.</div>'; return; }
+  names.sort(function(a, b){ return bal(b) - bal(a); });
+  var due = 0;
+  names.forEach(function(s){ if(bal(s) > 0) due += bal(s); });
+  var h = '<div class="box"><div class="sub">Sab suppliers ka kul baqaya</div><div class="big">Rs '+Math.round(due)+'</div></div>';
+  names.forEach(function(s){
+    var b = bal(s);
+    h += '<div class="box"><button class="btn o" data-ko="'+esc(s)+'" style="width:100%;text-align:left"><b>'+esc(s)+'</b><br><span style="font-weight:400">'+balTxt(b)+'</span></button>';
+    if(khOpen === s){
+      h += '<input class="ph" type="number" inputmode="decimal" placeholder="Rakam (Rs)" id="ka">'
+        + '<div class="row"><button class="btn" data-kpay="'+esc(s)+'">Payment di</button><button class="btn o" data-kbill="'+esc(s)+'">Bill likhein</button></div>'
+        + '<a class="btn o" href="'+waLink(s, khMsg(s))+'" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-top:8px">Supplier ko hisaab WhatsApp karein</a>';
+      var e = kh[s] || [], run = [], rb = 0;
+      e.forEach(function(x, n){ rb += (x.t === 'bill' ? x.a : -x.a); run[n] = rb; });
+      for(var i = e.length - 1, c = 0; i >= 0 && c < 20; i--, c++){
+        h += '<div class="lst"><div>'+esc(e[i].d)+' · '+(e[i].t === 'bill' ? 'Bill' : (e[i].t === 'adj' ? 'Bill kam' : 'Payment'))+(e[i].n ? ' · '+esc(e[i].n) : '')+'<div class="nm" style="color:'+(e[i].t === 'bill' ? '#dc2626' : '#16a34a')+'">'+(e[i].t === 'bill' ? '+' : '−')+' Rs '+Math.round(e[i].a)+'</div><div class="sub">Baqi: Rs '+Math.round(run[i])+'</div></div>'
+          + '<button class="btn o s" data-kdel="'+esc(s)+'||'+i+'">Hatayein</button></div>';
+      }
+    }
+    h += '</div>';
+  });
+  el.innerHTML = h;
+}
+document.getElementById('tabS').onclick = function(){ showTab('s'); };
+document.getElementById('tabK').onclick = function(){ showTab('k'); };
+document.getElementById('tabM').onclick = function(){ showTab('m'); };
+var extra = {cats: ['Reng items', 'General items', 'Surgical', 'Eye drops'], items: []};
+try{ var ex0 = JSON.parse(localStorage.getItem('mo_extra') || 'null'); if(ex0 && ex0.cats && ex0.items) extra = ex0; }catch(e){}
+function extraTab(){ document.getElementById('tabE').textContent = '📝 Alag ('+extra.items.length+')'; }
+function saveExtra(){ try{ localStorage.setItem('mo_extra', JSON.stringify(extra)); }catch(e){} extraTab(); }
+function extraPanel(q){
+  var h = '<div class="box" style="margin-top:10px"><div class="nm">Item list mein nahi mila?</div><div class="sub">Alag list mein save karein:</div>'
+    + '<input class="ph" id="xn" value="'+esc(q)+'" placeholder="Item ka naam">'
+    + '<input class="qi" id="xq" type="number" min="1" inputmode="numeric" placeholder="Qty" style="width:90px;margin-bottom:8px">'
+    + '<div style="display:flex;flex-wrap:wrap;gap:8px">';
+  extra.cats.forEach(function(c, i){ h += '<button class="btn o s" data-xadd="'+i+'">'+esc(c)+'</button>'; });
+  return h + '</div></div>';
+}
+function extraText(ci){
+  var lines = [], n = 0;
+  extra.items.forEach(function(it){ if(it.cat === ci){ n++; lines.push(n+'. '+it.n+' - Qty: '+it.qty); } });
+  return extra.cats[ci] + ' (' + new Date().toLocaleDateString('en-GB') + ')\n' + lines.join('\n') + '\n\nDeveloped by Al Shifa Patni';
+}
+function renderExtra(){
+  var el = document.getElementById('extra');
+  var h = '<p class="sub" style="margin:0 0 8px">Jo items supplier ki list mein nahi mile, unhe yahan alag save karein. Search mein item likh kar neeche wale buttons se yahan aate hain.</p>';
+  extra.cats.forEach(function(c, ci){
+    var rows = '', n = 0;
+    extra.items.forEach(function(it, i){
+      if(it.cat !== ci) return;
+      n++;
+      rows += '<div class="lst"><div><b>'+n+'.</b> '+esc(it.n)+'<div class="sub">'+esc(it.d)+'</div></div><div style="display:flex;align-items:center;gap:6px"><button class="btn o s" data-xqd="'+i+'">−</button><b>'+it.qty+'</b><button class="btn o s" data-xqi="'+i+'">+</button><button class="btn o s" data-xdel="'+i+'">✕</button></div></div>';
+    });
+    h += '<div class="box"><div class="gh">'+esc(c)+' ('+n+')</div>';
+    if(n){
+      h += rows + '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px"><button class="btn s" data-xpdf="'+ci+'">PDF / Print</button><button class="btn o s" data-xcopy="'+ci+'">Text copy</button>'
+        + '<a class="btn o s" href="https://wa.me/?text='+encodeURIComponent(extraText(ci))+'" target="_blank" rel="noopener" style="text-decoration:none">WhatsApp</a>'
+        + '<button class="btn o s" data-xclr="'+ci+'">Saaf karein</button></div>';
+    }else{ h += '<div class="sub">Abhi khali.</div>'; }
+    h += '<button class="btn o s" data-xren="'+ci+'" style="margin-top:8px">Naam badlein</button></div>';
+  });
+  el.innerHTML = h;
+}
+function printExtra(ci){
+  var rows = '', n = 0;
+  extra.items.forEach(function(it){ if(it.cat === ci){ n++; rows += '<tr><td>'+n+'</td><td>'+esc(it.n)+'</td><td>'+it.qty+'</td></tr>'; } });
+  var pb = document.getElementById('printbox');
+  if(!pb){ pb = document.createElement('div'); pb.id = 'printbox'; document.body.appendChild(pb); }
+  pb.innerHTML = '<h2>'+esc(extra.cats[ci])+'</h2><p>Zeenat Medicine Market · '+new Date().toLocaleDateString('en-GB')+'</p><table><tr><th>#</th><th>Item</th><th>Qty</th></tr>'+rows+'</table>';
+  window.print();
+}
+var searchBase = search;
+search = function(){
+  searchBase();
+  var q = document.getElementById('q').value.trim();
+  if(q) document.getElementById('out').insertAdjacentHTML('beforeend', extraPanel(q));
+};
+var renderCartBase = renderCart;
+renderCart = function(){
+  renderCartBase();
+  var el = document.getElementById('cart');
+  if(!cart.length) return;
+  var shops = [], grand = 0, unknown = 0;
+  cart.forEach(function(c){ if(shops.indexOf(c.shop) < 0) shops.push(c.shop); });
+  shops.forEach(function(s){
+    var t = 0;
+    cart.forEach(function(c){ if(c.shop === s && c.tp > 0) t += c.tp * (1 - c.d/100) * c.qty; });
+    var v = parseFloat(amtMap[s]);
+    if(v > 0) t = v;
+    if(t > 0) grand += t; else unknown++;
+  });
+  el.insertAdjacentHTML('afterbegin', '<div class="box"><div class="sub">'+shops.length+' supplier · sab orders ka kul</div><div class="big">Rs '+Math.round(grand)+'</div>'+(unknown ? '<div class="sub">'+unknown+' supplier ki rakam nahi (TP nahi), neeche rakam khud likhein</div>' : '')+'</div>');
+};
+document.getElementById('tabO').onclick = function(){ showTab('o'); };
+document.addEventListener('input', function(e){
+  var s = e.target.getAttribute && e.target.getAttribute('data-amt');
+  if(s !== null && s !== undefined) amtMap[s] = e.target.value;
+});
+var hist = [], lastMap = {};
+try{ hist = JSON.parse(localStorage.getItem('mo_hist') || '[]'); }catch(e){ hist = []; }
+function keyOf(n){ return String(n).toUpperCase().replace(/[^A-Z0-9]/g, ''); }
+function rebuildLast(){
+  lastMap = {};
+  hist.forEach(function(o){ o.items.forEach(function(it){ lastMap[it.k] = {shop: o.shop, d: o.d, qty: it.qty}; }); });
+}
+function saveHist(){ try{ localStorage.setItem('mo_hist', JSON.stringify(hist)); }catch(e){} rebuildLast(); }
+rebuildLast();
+function addHist(shop, items, amt){
+  if(!items.length) return;
+  hist.push({shop: shop, d: new Date().toLocaleDateString('en-GB'), amt: amt, items: items.map(function(c){ return {n: c.n, k: keyOf(c.n), c: c.c, qty: c.qty, d: c.d, tp: c.tp, b: c.b}; })});
+  saveHist();
+}
+var fav = [];
+try{ fav = JSON.parse(localStorage.getItem('mo_fav') || '[]'); }catch(e){ fav = []; }
+function saveFav(){ try{ localStorage.setItem('mo_fav', JSON.stringify(fav)); }catch(e){} renderFav(); }
+function renderFav(){
+  var el = document.getElementById('fav');
+  if(!el) return;
+  if(!fav.length){ el.innerHTML = '<p class="sub">Search mein item ke saath ⭐ dabayein, wo yahan save ho jayega.</p>'; return; }
+  var h = '<button class="btn" data-favgo="1" style="width:100%;margin:6px 0">Sab sasta rate wale supplier se cart mein daalein</button>';
+  fav.forEach(function(f, i){ h += '<div class="lst"><div>'+esc(f.n)+' <b>× '+f.qty+'</b></div><button class="btn o s" data-favdel="'+i+'">Hatayein</button></div>'; });
+  el.innerHTML = h;
+}
+function favGo(){
+  var added = 0, miss = 0;
+  fav.forEach(function(f){
+    var best = null;
+    idx.forEach(function(r){ if(r.k === f.k && (!best || cmpOffer(r, best) < 0)) best = r; });
+    if(!best){ miss++; return; }
+    var ex = cart.filter(function(c){ return c.shop === best.shop && c.n === best.n && c.c === best.c; })[0];
+    if(ex) ex.qty += f.qty; else cart.push({shop: best.shop, n: best.n, c: best.c, d: best.d, b: best.b, tp: best.tp, qty: f.qty});
+    added++;
+  });
+  saveCart();
+  return '✓ ' + added + ' item cart mein aaye' + (miss ? ', ' + miss + ' ki list nahi mili' : '');
+}
+function renderBk(){
+  var el = document.getElementById('bk');
+  if(!el) return;
+  el.innerHTML = '<p class="sub">Backup mein khata, orders, cart, market, roz ka maal aur WhatsApp numbers hain. Lists nahi (wo dobara laga sakte hain). Backup ka text copy kar ke WhatsApp mein apne aap ko bhej dein.</p>'
+    + '<textarea class="ph" rows="5" id="bkt" placeholder="Backup yahan aayega. Wapas laane ke liye yahan paste karein."></textarea>'
+    + '<div class="row"><button class="btn s" data-bkmake="1">Backup banayein</button><button class="btn o s" data-bkcopy="1">Copy</button><button class="btn o s" data-bkrestore="1">Wapas laayein</button></div><p class="sub" id="bkm"></p>';
+}
+function khMsg(s){
+  var e = kh[s] || [], run = 0, rows = [];
+  e.forEach(function(x){ run += (x.t === 'bill' ? x.a : -x.a); rows.push(x.d+' - '+(x.t === 'bill' ? 'Bill' : (x.t === 'adj' ? 'Bill kam' : 'Payment'))+': Rs '+Math.round(x.a)+' (Baqi Rs '+Math.round(run)+')'); });
+  var b = bal(s);
+  return 'Hisaab - '+s+'\n'+rows.slice(-10).join('\n')+'\n\n'+(b < 0 ? 'Advance: Rs '+Math.round(-b) : 'Kul baqaya: Rs '+Math.round(b))+'\n\nDeveloped by Al Shifa Patni';
+}
+function waLink(s, text){
+  var l = lists.filter(function(x){ return x.shop === s; })[0] || {};
+  var num = (l.ph || '').replace(/\D/g, '');
+  if(num.charAt(0) === '0') num = '92' + num.slice(1);
+  return 'https://wa.me/' + num + '?text=' + encodeURIComponent(text);
+}
+function chg(o){
+  var p = o.pv;
+  if(!p) return '';
+  var down, txt;
+  if(o.tp > 0 && p.n > 0){
+    var now = o.tp * (1 - o.d/100);
+    if(Math.abs(now - p.n) < 0.005) return '';
+    down = now < p.n;
+    txt = 'pehle Rs ' + p.n.toFixed(2) + ' → ab Rs ' + now.toFixed(2);
+  }else{
+    if(Math.abs(o.d - p.d) < 0.005) return '';
+    down = o.d > p.d;
+    txt = 'discount pehle ' + p.d + '% → ab ' + o.d + '%';
+  }
+  return '<div class="sub" style="font-weight:700;color:' + (down ? '#16a34a' : '#dc2626') + '">' + (down ? '⬇️ Sasta hua: ' : '⬆️ Mehnga hua: ') + txt + (o.pd ? ' (' + esc(o.pd) + ')' : '') + '</div>';
+}
+function inCart(o){
+  var f = cart.filter(function(c){ return c.shop === o.shop && c.n === o.n && c.c === o.c; })[0];
+  return '<span class="ic">'+(f ? ' · <b style="color:#16a34a">🛒 Cart mein: '+f.qty+'</b>' : '')+'</span>';
+}
+function lastLine(k){
+  var L = lastMap[k];
+  return L ? '<div class="sub" style="color:var(--text);margin-top:4px">🕘 Pichli baar: <b>'+esc(L.shop)+'</b> se · '+esc(L.d)+' · Qty '+L.qty+'</div>' : '';
+}
+function renderOrders(){
+  var el = document.getElementById('orders');
+  if(!hist.length){ el.innerHTML = '<div class="empty">📜<br>Abhi koi purana order nahi. Cart mein "Order ho gaya" dabane par yahan save hoga.</div>'; return; }
+  var by = {}, shops = [];
+  for(var i = hist.length - 1; i >= 0; i--){
+    var s = hist[i].shop;
+    if(!by[s]){ by[s] = []; shops.push(s); }
+    by[s].push(i);
+  }
+  var h = '';
+  shops.forEach(function(s){
+    h += '<div class="box"><div class="gh">'+esc(s)+'</div><div class="sub">'+by[s].length+' order</div>';
+    by[s].slice(0, 30).forEach(function(i){
+      var o = hist[i];
+      h += '<div class="cl"><div class="nm">'+esc(o.d)+(o.amt ? ' · Rs '+Math.round(o.amt) : '')+'</div>';
+      o.items.forEach(function(it){ h += '<div class="lst" style="border-top:0;padding:3px 0"><div>'+esc(it.n)+'</div><b>× '+it.qty+'</b></div>'; });
+      h += '<div class="row" style="margin-top:6px"><button class="btn o s" data-reorder="'+i+'">Dobara cart mein daalein</button><button class="btn o s" data-hdel="'+i+'">Hatayein</button></div></div>';
+    });
+    h += '</div>';
+  });
+  el.innerHTML = h;
+}
+function renderOrdersOld(){
+  var el = document.getElementById('orders');
+  if(!hist.length){ el.innerHTML = '<div class="empty">📜<br>Abhi koi purana order nahi. Cart ya Market mein "Order ho gaya" dabane par yahan save hoga.</div>'; return; }
+  var h = '';
+  for(var i = hist.length - 1, c = 0; i >= 0 && c < 60; i--, c++){
+    var o = hist[i];
+    h += '<div class="box"><div class="gh">'+esc(o.shop)+'</div><div class="sub">'+esc(o.d)+(o.amt ? ' · Rs '+Math.round(o.amt) : '')+'</div>';
+    o.items.forEach(function(it){ h += '<div class="lst"><div>'+esc(it.n)+'</div><b>× '+it.qty+'</b></div>'; });
+    h += '<div class="row" style="margin-top:8px"><button class="btn o s" data-reorder="'+i+'">Dobara cart mein daalein</button><button class="btn o s" data-hdel="'+i+'">Hatayein</button></div></div>';
+  }
+  el.innerHTML = h;
+}
+var market = [];
+try{ market = JSON.parse(localStorage.getItem('mo_market') || '[]'); }catch(e){ market = []; }
+function saveMarket(){ try{ localStorage.setItem('mo_market', JSON.stringify(market)); }catch(e){} }
+function toMarket(items){
+  items.forEach(function(it){
+    var f = market.filter(function(m){ return m.shop === it.shop && m.n === it.n && m.c === it.c; })[0];
+    if(f){ f.qty += it.qty; f.done = false; }
+    else market.push({shop: it.shop, n: it.n, c: it.c, d: it.d, b: it.b, tp: it.tp, qty: it.qty, done: false});
+  });
+  saveMarket();
+}
+function mGot(c){ return c.got === undefined ? c.qty : c.got; }
+function mAmt(c, q){ return c.tp > 0 ? c.tp * (1 - c.d/100) * q : 0; }
+function shopDiff(s){
+  var o = 0, g = 0, ch = false;
+  market.forEach(function(c){ if(c.shop === s){ o += mAmt(c, c.qty); g += mAmt(c, mGot(c)); if(mGot(c) !== c.qty) ch = true; } });
+  return {o: o, g: g, d: o - g, ch: ch};
+}
+function renderMarket(){
+  var el = document.getElementById('market');
+  if(!market.length){ el.innerHTML = '<div class="empty">🛍<br>Market list khali hai. Cart mein order bhej kar "Order ho gaya" dabayein, to items yahan aa jayenge.</div>'; return; }
+  var shops = [];
+  market.forEach(function(c){ if(shops.indexOf(c.shop) < 0) shops.push(c.shop); });
+  var h = '';
+  shops.forEach(function(s){
+    var n = 0, dn = 0, rows = '', sd = shopDiff(s);
+    market.forEach(function(c, i){
+      if(c.shop !== s) return;
+      n++; if(c.done) dn++;
+      var g = mGot(c);
+      rows += '<button class="mk'+(c.done ? ' dn' : '')+'" data-tick="'+i+'"><span class="mq">'+c.qty+'</span><span class="mn">'+esc(c.n)+(c.b ? '<small>Bonus '+esc(c.b)+'</small>' : '')+'</span><span class="mt">'+(c.done ? '✕' : '')+'</span></button>'
+        + '<div class="mg"><span>Mila:</span><button class="btn o s" data-gdec="'+i+'">−</button><b>'+g+'</b><button class="btn o s" data-ginc="'+i+'">+</button>'
+        + (g !== c.qty ? '<span style="color:#dc2626;font-weight:700">order '+c.qty+'</span>' : '')
+        + (c.tp > 0 ? '<span class="sub" style="margin-left:auto">Rs '+Math.round(mAmt(c, g))+'</span>' : '')+'</div>';
+    });
+    h += '<div class="box"><div class="gh">'+esc(s)+'</div><div class="sub">'+dn+' / '+n+' uthaye</div>'+rows;
+    if(sd.o > 0) h += '<div class="stat" style="margin-top:8px">Order: Rs '+Math.round(sd.o)+' · Mila: Rs '+Math.round(sd.g)+'</div>';
+    if(Math.abs(sd.d) > 0.5) h += '<div class="nm" style="color:'+(sd.d > 0 ? '#dc2626' : '#16a34a')+'">Farq: Rs '+Math.round(Math.abs(sd.d))+(sd.d > 0 ? ' kam bill' : ' zyada bill')+'</div>';
+    h += '<div class="row" style="margin-top:8px;flex-wrap:wrap">';
+    if(sd.ch){ h += '<button class="btn" data-msave="'+esc(s)+'">Bill theek karke dukan khatam</button><button class="btn o s" data-mfix="'+esc(s)+'">Sirf bill save karein</button>'; }
+    else{ h += '<button class="btn" data-mdone="'+esc(s)+'">Is dukan ka kaam khatam</button>'; }
+    h += '<button class="btn o s" data-untick="'+esc(s)+'">Nishan hatayein</button></div></div>';
+  });
+  el.innerHTML = h;
+}
+function renderMarketV2(){
+  var el = document.getElementById('market');
+  if(!market.length){ el.innerHTML = '<div class="empty">🛍<br>Market list khali hai. Cart mein order bhej kar "Order ho gaya" dabayein, to items yahan aa jayenge.</div>'; return; }
+  var shops = [];
+  market.forEach(function(c){ if(shops.indexOf(c.shop) < 0) shops.push(c.shop); });
+  var h = '';
+  shops.forEach(function(s){
+    var n = 0, dn = 0, rows = '';
+    market.forEach(function(c, i){
+      if(c.shop !== s) return;
+      n++; if(c.done) dn++;
+      rows += '<button class="mk'+(c.done ? ' dn' : '')+'" data-tick="'+i+'"><span class="mq">'+c.qty+'</span><span class="mn">'+esc(c.n)+(c.b ? '<small>Bonus '+esc(c.b)+'</small>' : '')+'</span><span class="mt">'+(c.done ? '✕' : '')+'</span></button>';
+    });
+    h += '<div class="box"><div class="gh">'+esc(s)+'</div><div class="sub">'+dn+' / '+n+' uthaye</div>'+rows
+      + '<div class="row" style="margin-top:8px"><button class="btn" data-mdone="'+esc(s)+'">Is dukan ka kaam khatam</button><button class="btn o s" data-untick="'+esc(s)+'">Nishan hatayein</button></div></div>';
+  });
+  el.innerHTML = h;
+}
+function renderMarketOld(){
+  var el = document.getElementById('market');
+  if(!cart.length){ el.innerHTML = '<div class="empty">🛍<br>Market list khali hai. Pehle Search se items Cart mein daalein.</div>'; return; }
+  var shops = [];
+  cart.forEach(function(c){ if(shops.indexOf(c.shop) < 0) shops.push(c.shop); });
+  var h = '';
+  shops.forEach(function(s){
+    var tot = 0, hasTp = false, n = 0, dn = 0, rows = '';
+    cart.forEach(function(c, i){
+      if(c.shop !== s) return;
+      n++; if(c.done) dn++;
+      var amt = c.tp > 0 ? c.tp * (1 - c.d/100) * c.qty : 0;
+      if(amt){ tot += amt; hasTp = true; }
+      rows += '<button class="mk'+(c.done ? ' dn' : '')+'" data-tick="'+i+'"><span class="mq">'+c.qty+'</span><span class="mn">'+esc(c.n)+(c.b ? '<small>Bonus '+esc(c.b)+'</small>' : '')+'</span><span class="mt">'+(c.done ? '✕' : '')+'</span></button>';
+    });
+    h += '<div class="box"><div class="gh">'+esc(s)+'</div><div class="sub">'+dn+' / '+n+' uthaye</div>'+rows
+      + '<input class="ph" type="number" inputmode="decimal" placeholder="Bill ki rakam Rs (khata ke liye)" data-amt="'+esc(s)+'" value="'+(amtMap[s] !== undefined ? esc(amtMap[s]) : (hasTp ? Math.round(tot) : ''))+'">'
+      + '<div class="row"><button class="btn" data-clr="'+esc(s)+'">Maal le liya, khata mein likhein</button><button class="btn o s" data-untick="'+esc(s)+'">Nishan hatayein</button></div></div>';
+  });
+  el.innerHTML = h;
+}
+document.getElementById('tabC').onclick = function(){ showTab('c'); };
+document.addEventListener('click', function(e){
+  var t = e.target.closest ? e.target.closest('button') : null;
+  if(!t) return;
+  var a;
+  if((a = t.getAttribute('data-add')) !== null){
+    var qi = t.parentNode.querySelector('.qi');
+    addToCart(+a, parseInt(qi.value, 10) || 1);
+    var box = t.closest('.top') || t.closest('.alt'), ic = box ? box.querySelector('.ic') : null;
+    if(ic) ic.outerHTML = inCart(idx[+a]);
+    qi.value = '';
+    t.textContent = '✓ Add hua';
+    setTimeout(function(){ t.textContent = '+ Cart'; }, 1200);
+    return;
+  }
+  if((a = t.getAttribute('data-inc')) !== null){ cart[+a].qty++; saveCart(); renderCart(); return; }
+  if((a = t.getAttribute('data-dec')) !== null){ if(cart[+a].qty > 1) cart[+a].qty--; saveCart(); renderCart(); return; }
+  if((a = t.getAttribute('data-rm')) !== null){ cart.splice(+a, 1); saveCart(); renderCart(); return; }
+  if((a = t.getAttribute('data-clr')) !== null){
+    var bx = t.closest('.box'), ai = bx ? bx.querySelector('[data-amt]') : null, amt = ai ? (parseFloat(ai.value) || 0) : 0;
+    var cnt = cart.filter(function(c){ return c.shop === a; }).length;
+    addKh(a, 'bill', amt, cnt+' items');
+    addHist(a, cart.filter(function(c){ return c.shop === a; }), amt);
+    toMarket(cart.filter(function(c){ return c.shop === a; }));
+    cart = cart.filter(function(c){ return c.shop !== a; }); delete amtMap[a]; msgOpen = null; saveCart(); renderCart(); renderMarket(); return;
+  }
+  if((a = t.getAttribute('data-fav')) !== null){
+    var fo = idx[+a], fq = t.parentNode.querySelector('.qi'), q2 = parseInt(fq ? fq.value : '', 10) || 1;
+    if(fo){
+      var fe = fav.filter(function(f){ return f.k === fo.k; })[0];
+      if(fe) fe.qty = q2; else fav.push({n: fo.n, k: fo.k, qty: q2});
+      saveFav();
+    }
+    t.textContent = '✓'; setTimeout(function(){ t.textContent = '⭐'; }, 1200); return;
+  }
+  if((a = t.getAttribute('data-favgo')) !== null){ t.textContent = favGo(); return; }
+  if((a = t.getAttribute('data-favdel')) !== null){ fav.splice(+a, 1); saveFav(); return; }
+  if(t.hasAttribute('data-bkmake') || t.hasAttribute('data-bkcopy') || t.hasAttribute('data-bkrestore')){
+    var bt = document.getElementById('bkt'), bm = document.getElementById('bkm');
+    if(t.hasAttribute('data-bkmake')){
+      var phs = {};
+      lists.forEach(function(l){ if(l.ph) phs[l.shop] = l.ph; });
+      bt.value = JSON.stringify({v: 1, kh: kh, hist: hist, cart: cart, market: market, fav: fav, extra: extra, phones: phs});
+      bt.focus(); bt.select(); bm.textContent = 'Backup ban gaya. Ab Copy dabayein.';
+    }else if(t.hasAttribute('data-bkcopy')){
+      var done2 = function(){ bm.textContent = 'Copy ho gaya. WhatsApp mein apne aap ko bhej dein.'; };
+      try{ navigator.clipboard.writeText(bt.value).then(done2, function(){ bt.select(); try{ document.execCommand('copy'); }catch(x){} done2(); }); }
+      catch(x){ bt.select(); try{ document.execCommand('copy'); }catch(y){} done2(); }
+    }else{
+      try{
+        var bd = JSON.parse(bt.value);
+        if(!bd || bd.v !== 1) throw 1;
+        kh = bd.kh || {}; hist = bd.hist || []; cart = bd.cart || []; market = bd.market || []; fav = bd.fav || []; if(bd.extra && bd.extra.cats){ extra = bd.extra; saveExtra(); }
+        saveKh(); saveHist(); saveCart(); saveMarket(); saveFav();
+        lists.forEach(function(l){ if(bd.phones && bd.phones[l.shop]){ l.ph = bd.phones[l.shop]; dbPut(l); } });
+        bm.textContent = 'Sab wapas aa gaya.';
+      }catch(x){ bm.textContent = 'Backup ka text theek nahi hai.'; }
+    }
+    return;
+  }
+  if((a = t.getAttribute('data-xadd')) !== null){
+    var xn = document.getElementById('xn'), xq = document.getElementById('xq');
+    var xname = clean(xn ? xn.value : '');
+    if(!xname) return;
+    extra.items.push({cat: +a, n: xname, qty: parseInt(xq ? xq.value : '', 10) || 1, d: new Date().toLocaleDateString('en-GB')});
+    saveExtra();
+    var xold = extra.cats[+a];
+    t.textContent = '✓ Save ho gaya'; setTimeout(function(){ t.textContent = xold; }, 1300);
+    return;
+  }
+  if((a = t.getAttribute('data-xqd')) !== null){ if(extra.items[+a].qty > 1) extra.items[+a].qty--; saveExtra(); renderExtra(); return; }
+  if((a = t.getAttribute('data-xqi')) !== null){ extra.items[+a].qty++; saveExtra(); renderExtra(); return; }
+  if((a = t.getAttribute('data-xdel')) !== null){ extra.items.splice(+a, 1); saveExtra(); renderExtra(); return; }
+  if((a = t.getAttribute('data-xpdf')) !== null){ printExtra(+a); return; }
+  if((a = t.getAttribute('data-xcopy')) !== null){
+    var xtx = extraText(+a);
+    var xdone = function(){ t.textContent = '✓ Copy ho gaya'; setTimeout(function(){ t.textContent = 'Text copy'; }, 1500); };
+    try{ navigator.clipboard.writeText(xtx).then(xdone, xdone); }catch(x){ xdone(); }
+    return;
+  }
+  if((a = t.getAttribute('data-xclr')) !== null){
+    if(t.getAttribute('data-sure')){ extra.items = extra.items.filter(function(it){ return it.cat !== +a; }); saveExtra(); renderExtra(); return; }
+    t.setAttribute('data-sure', '1'); t.textContent = 'Pakka saaf karein?';
+    setTimeout(function(){ t.removeAttribute('data-sure'); t.textContent = 'Saaf karein'; }, 3000);
+    return;
+  }
+  if((a = t.getAttribute('data-xren')) !== null){
+    try{ var xnn = prompt('Is list ka naam', extra.cats[+a]); if(xnn && xnn.trim()){ extra.cats[+a] = xnn.trim(); saveExtra(); renderExtra(); } }catch(x){}
+    return;
+  }
+  if((a = t.getAttribute('data-hdel')) !== null){ hist.splice(+a, 1); saveHist(); renderOrders(); return; }
+  if((a = t.getAttribute('data-reorder')) !== null){
+    var ho = hist[+a];
+    ho.items.forEach(function(it){
+      var cur = idx.filter(function(r){ return r.shop === ho.shop && r.n === it.n; })[0] || it;
+      var f = cart.filter(function(c){ return c.shop === ho.shop && c.n === it.n && c.c === it.c; })[0];
+      if(f) f.qty += it.qty; else cart.push({shop: ho.shop, n: it.n, c: it.c, d: cur.d, b: cur.b, tp: cur.tp, qty: it.qty});
+    });
+    saveCart(); t.textContent = '✓ Cart mein dala'; return;
+  }
+  if((a = t.getAttribute('data-gdec')) !== null){ var m1 = market[+a], g1 = mGot(m1); if(g1 > 0) m1.got = g1 - 1; saveMarket(); renderMarket(); return; }
+  if((a = t.getAttribute('data-ginc')) !== null){ var m2 = market[+a]; m2.got = mGot(m2) + 1; saveMarket(); renderMarket(); return; }
+  if((a = t.getAttribute('data-mfix')) !== null || (a = t.getAttribute('data-msave')) !== null){
+    var sd2 = shopDiff(a);
+    if(sd2.d > 0.5) addKh(a, 'adj', sd2.d, 'maal kam aya');
+    else if(sd2.d < -0.5) addKh(a, 'bill', -sd2.d, 'maal zyada aya');
+    if(t.hasAttribute('data-msave')){ market = market.filter(function(m){ return m.shop !== a; }); }
+    else{ market.forEach(function(m){ if(m.shop === a) m.qty = mGot(m); }); market = market.filter(function(m){ return m.qty > 0; }); }
+    saveMarket(); renderMarket(); return;
+  }
+  if((a = t.getAttribute('data-tick')) !== null){ market[+a].done = !market[+a].done; saveMarket(); renderMarket(); return; }
+  if((a = t.getAttribute('data-untick')) !== null){ market.forEach(function(c){ if(c.shop === a) c.done = false; }); saveMarket(); renderMarket(); return; }
+  if((a = t.getAttribute('data-mdone')) !== null){ market = market.filter(function(m){ return m.shop !== a; }); saveMarket(); renderMarket(); return; }
+  if((a = t.getAttribute('data-tomk')) !== null){
+    toMarket(cart.filter(function(c){ return c.shop === a; }));
+    cart = cart.filter(function(c){ return c.shop !== a; }); delete amtMap[a]; msgOpen = null; saveCart(); renderCart(); return;
+  }
+  if((a = t.getAttribute('data-z')) !== null){ setZoom(zm + (+a) * 0.1); return; }
+  if((a = t.getAttribute('data-more')) !== null){ showMore = !showMore; search(); return; }
+  if((a = t.getAttribute('data-ko')) !== null){ khOpen = (khOpen === a ? null : a); renderKhata(); return; }
+  if((a = t.getAttribute('data-kbill')) !== null || (a = t.getAttribute('data-kpay')) !== null){
+    var ki = document.getElementById('ka'), v = parseFloat(ki ? ki.value : '') || 0;
+    addKh(a, t.hasAttribute('data-kbill') ? 'bill' : 'pay', v, '');
+    renderKhata(); return;
+  }
+  if((a = t.getAttribute('data-kdel')) !== null){ var p = a.split('||'); (kh[p[0]] || []).splice(+p[1], 1); saveKh(); renderKhata(); return; }
+  if((a = t.getAttribute('data-copy')) !== null){
+    var txt = orderText(a), done = function(){ t.textContent = '✓ Copy ho gaya'; };
+    var fb = function(){ var m = document.getElementById('mt'); if(m){ m.focus(); m.select(); try{ document.execCommand('copy'); }catch(x){} } done(); };
+    try{ navigator.clipboard.writeText(txt).then(done, fb); }catch(x){ fb(); }
+    return;
+  }
+  if((a = t.getAttribute('data-send')) !== null){ sendOrder(a); return; }
+});
+document.addEventListener('change', async function(e){
+  var s = e.target.getAttribute && e.target.getAttribute('data-ph');
+  if(s === null || s === undefined) return;
+  var l = lists.filter(function(x){ return x.shop === s; })[0];
+  if(l){ l.ph = e.target.value.trim(); await dbPut(l); }
+});
+
+async function handleShared(){
+  if(!/[?&]shared=/.test(location.search) || !('caches' in window)) return;
+  try{
+    var cache = await caches.open('share'), keys = await cache.keys(), files = [];
+    keys.forEach(function(k){
+      files.push({name: '', text: async function(){ var r = await cache.match(k); return r.text(); }});
+    });
+    if(files.length) await addFiles(files);
+    for(var j = 0; j < keys.length; j++){ await cache.delete(keys[j]); }
+  }catch(e){}
+  try{ history.replaceState(null, '', location.pathname); }catch(e){}
+}
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('zeenat6-sw.js').catch(function(){}); }
+
+(async function(){
+  await openDb();
+  lists = await dbAll();
+  build(); renderMeta(); search(); cartTab(); renderFav(); renderBk(); extraTab();
+  await handleShared();
+})();
+</script>
+</body>
+</html>
